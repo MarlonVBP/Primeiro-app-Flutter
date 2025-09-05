@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'calculator.dart';
+import 'converter_screen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget{
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Calculator(),
+      home: ConverterScreen(),
     );
   }
 }
