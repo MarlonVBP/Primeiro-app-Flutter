@@ -10,20 +10,20 @@ class ConverterScreen extends StatefulWidget {
 class _ConverterScreenState extends State<ConverterScreen> {
   final logic = ConverterLogic();
 
-  final Color bgGradientStart = Color(0xFF283593); // Azul escuro
-  final Color bgGradientEnd = Color(0xFF512DA8);   // Roxo escuro
-  final Color accentColor = Color(0xFFFF9800);     // Laranja
-  final Color keyboardBg = Color(0xFF3949AB);      // Azul médio
-  final Color buttonBg = Color(0xFF5C6BC0);        // Azul claro
+  final Color bgGradientStart = Color(0xFF1976D2); // Azul principal
+  final Color bgGradientEnd = Color(0xFF1565C0);   // Azul escuro
+  final Color accentColor = Color(0xFF64B5F6);     // Azul claro
+  final Color keyboardBg = Color(0xFF2196F3);      // Azul médio
+  final Color buttonBg = Color(0xFF42A5F5);        // Azul claro
   final Color displayBg = Colors.white;
-  final Color displayText = Color(0xFF283593);
+  final Color displayText = Color(0xFF1976D2);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 8,
-        backgroundColor: accentColor,
+        backgroundColor: bgGradientStart,
         title: Text(
           'Conversor de Unidades',
           style: TextStyle(
@@ -168,10 +168,14 @@ class _ConverterScreenState extends State<ConverterScreen> {
         boxShadow: [
           BoxShadow(
             color: Colors.black26,
-            blurRadius: 8,
-            offset: Offset(0, 2),
+            blurRadius: 12,
+            offset: Offset(0, 4),
           ),
         ],
+        border: Border.all(
+          color: accentColor,
+          width: 2,
+        ),
       ),
       height: 320.0,
       child: Column(
@@ -250,7 +254,7 @@ class _ConverterScreenState extends State<ConverterScreen> {
   }
 }
 
-// Botão customizado com efeito de hover, sombra e borda
+// Botão customizado com efeito de hover, sombra e borda azul
 class _HoverButton extends StatefulWidget {
   final String label;
   final Color textColor;
@@ -294,7 +298,7 @@ class _HoverButtonState extends State<_HoverButton> {
           boxShadow: [
             BoxShadow(
               color: Colors.black38,
-              blurRadius: _isHovered ? 12 : 8,
+              blurRadius: _isHovered ? 16 : 8,
               offset: Offset(0, 4),
             ),
           ],
